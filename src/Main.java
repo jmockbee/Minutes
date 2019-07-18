@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(getDurationString(65,45));
+        System.out.println(getDurationString(3945));
     }
 
     private static String getDurationString(int minutes, int seconds){
@@ -15,6 +16,14 @@ public class Main {
         return hours +"h " +remainingMinutes+  "m " + seconds+ "s ";
     }
     private static String getDurationString(int seconds){
-        if (seconds<0)
+        if (seconds<0) {
+            return "invalid";
+        }
+     int minutes = seconds/60;
+        int remainingSeconds = seconds% 60;
+        return getDurationString(minutes,remainingSeconds);
+
+
+
     }
 }
