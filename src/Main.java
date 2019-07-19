@@ -1,13 +1,17 @@
 public class Main {
+// adding constant
+    private static final String INVALID_VALUE_MESSAGE = "Invalid Value";
 
     public static void main(String[] args) {
         System.out.println(getDurationString(65, 45));
         System.out.println(getDurationString(3945));
+        System.out.println(getDurationString(-41));
+        System.out.println(getDurationString(65,9));
     }
 
     private static String getDurationString(int minutes, int seconds) {
         if ((minutes < 0) || (seconds < 0) || (seconds > 59)) {
-            return "invalid value";
+            return INVALID_VALUE_MESSAGE;
         }
 
 
@@ -38,7 +42,7 @@ public class Main {
 
     private static String getDurationString(int seconds) {
         if (seconds < 0) {
-            return "invalid";
+            return INVALID_VALUE_MESSAGE;
         }
 
         int minutes = seconds / 60;
